@@ -7,6 +7,6 @@ RUN apt-get update -y \
 
 ENV	LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive
 
-ADD go-project-template /bin/
+ADD test-123 /bin/
 
-ENTRYPOINT ["/bin/go-project-template"]
+ENTRYPOINT ["/bin/test-123"]

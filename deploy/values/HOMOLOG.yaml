@@ -1,0 +1,14 @@
+replicas: 1
+
+serviceAccount:
+  annotations:
+    test-annotation: homolog
+imageName: test-123-api
+enableVault: true
+vaultTemplate:
+  export DATABASE_NAME='{{ (secret "kv-v2/apps/test-123/database").Data.data.database_name }}'
+  export DATABASE_USER='{{ (secret "kv-v2/apps/test-123/database").Data.data.username }}'
+  export DATABASE_PASSWORD='{{ (secret "kv-v2/apps/test-123/database").Data.data.password }}'
+  export DATABASE_PORT_DIRECT='{{ (secret "kv-v2/apps/test-123/database").Data.data.port }}'
+  export DATABASE_HOST_DIRECT='{{ (secret "kv-v2/apps/test-123/database").Data.data.endpoint }}'
+command: "['bash', '-c', '. /vault/secrets/credentials.json && /bin/test-123']"

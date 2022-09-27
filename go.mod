@@ -1,3 +1,3 @@
-module github.com/dlpco/go-project-template
+module github.com/dlpco/test-123
 
 go 1.18

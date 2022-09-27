@@ -1,4 +1,4 @@
-NAME=go-project-template
+NAME=test-123
 NAME_API=$(NAME)-api
 NAME_WORKER=$(NAME)-worker
 VERSION=dev
@@ -95,7 +95,7 @@ VCS_REF = $(if $(GITHUB_SHA),$(GITHUB_SHA),$(shell git rev-parse HEAD))
 TAG ?= $(subst  /,-,$(if $(RELEASE_VERSION),$(RELEASE_VERSION),$(if $(GITHUB_HEAD_REF),$(GITHUB_HEAD_REF),$(shell git rev-parse --abbrev-ref HEAD))))
 TRIGGER_KIND ?= $(if $(RELEASE_VERSION),PRODUCTION,HOMOLOG)
 REGISTRY_PREFIX ?= stonebankingregistry347.azurecr.io/
-PROJECT = go-project-template
+PROJECT = test-123
 IMAGE = $(REGISTRY_PREFIX)dlpco/$(PROJECT)
 TAGS = SANDBOX PRODUCTION
 STATUS_CODE := $(shell curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Basic $(VSTS_AUTH)" -H "Content-Type: application/json" "https://stone-banking.vsrm.visualstudio.com/$(PROJECT)/_apis/release/releases?api-version=4.1-preview.6")

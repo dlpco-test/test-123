@@ -16,8 +16,8 @@ helmDefaults:
   timeout: 900
 
 releases:
-  - name: projeto-template
-    namespace: projeto-template
+  - name: test-123
+    namespace: test-123
     values:
       - values/base.yaml.gotmpl
     chart: ./charts/stonks-app
